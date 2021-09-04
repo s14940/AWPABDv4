@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b02cc060e9eb4e7281d953b80f8d75ec" Name="Diagram1">
+        <EntityTypeShape EntityType="AWPABDModel.BlokadyHistory" Width="1.5" PointX="7.5" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.DatabaseGroup" Width="1.5" PointX="3" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.Databases" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.Files" Width="1.5" PointX="7.5" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.Group" Width="1.5" PointX="3.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.HostHistory" Width="1.5" PointX="10.5" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.Latency" Width="1.5" PointX="5.25" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.LatencyHistory" Width="1.5" PointX="7.5" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.Logins" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.LoginServers" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.Procedury" Width="1.5" PointX="5.25" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.ProceduryHistory" Width="1.5" PointX="10.5" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.ProcesyHistory" Width="1.5" PointX="7.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.Roles" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.Servers" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWPABDModel.ServersGroup" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="AWPABDModel.FK_BlokadyHistory_LAtency" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_BlokadyHistory_Servers" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_Databases_DatabseGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_Databases_Servers" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_Files_Procedury" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_Files_Servers" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_Logins_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_HostHistory_Latency" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_HostHistory_Servers" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_Latency_ServersD" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_Latency_ServersS" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_LatencyHistory_Latency" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_ProcesyHistory_Latency" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_Logins_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_LoginServers_Login" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_LoginServers_Servers" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_Procedury_Servers" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_ProceduryHistory_Procedury" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_ProceduryHistory_Servers" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_ProcesyHistory_Servers" ManuallyRouted="false" />
+        <AssociationConnector Association="AWPABDModel.FK_Servers_ServersGroup" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

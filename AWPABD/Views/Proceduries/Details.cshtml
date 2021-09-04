@@ -1,0 +1,67 @@
+﻿@model AWPABD.Models.Procedury
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Procedury</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Body)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Body)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Utworzona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Utworzona)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zmodyfikowana)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zmodyfikowana)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servers.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servers.Nazwa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,57 @@
+﻿@{ 
+    if (Session["loginID"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - AWPABD</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("AWPABD", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Databases", "", "Databases")</li>
+                    <li>@Html.ActionLink("Servers", "", "Servers")</li>
+                    <li>@Html.ActionLink("Latencies", "", "Latencies")</li>
+                    <li>@Html.ActionLink("Logins", "", "Logins")</li>
+                    <li>@Html.ActionLink("Procedures", "", "Proceduries")</li>
+                    <li>Jeśteś zalogowany jako @Session["loginName"]</li>
+                    <li>@Html.ActionLink("Wyloguj ", "LogOut", "Login")</li>
+                    
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - AWPABD</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

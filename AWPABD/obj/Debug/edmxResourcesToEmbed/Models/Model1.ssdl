@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AWPABDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BlokadyHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Servers" Type="int" Nullable="false" />
+    <Property Name="Id_Latency" Type="int" Nullable="false" />
+    <Property Name="Data" Type="datetime" />
+    <Property Name="Wartosc" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DatabaseGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Grupa" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Databases">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Opis" Type="nvarchar" MaxLength="250" />
+    <Property Name="Wlaczona" Type="bit" Nullable="false" />
+    <Property Name="Owner" Type="nvarchar" MaxLength="100" />
+    <Property Name="Collation" Type="nvarchar" MaxLength="100" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Id_DatabaseGroup" Type="int" Nullable="false" />
+    <Property Name="Id_Servers" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Procedury" Type="int" Nullable="false" />
+    <Property Name="Id_Servers" Type="int" Nullable="false" />
+    <Property Name="LokalizacjaPliku" Type="nvarchar" MaxLength="250" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Grupa" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HostHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Servers" Type="int" Nullable="false" />
+    <Property Name="Id_Latency" Type="int" Nullable="false" />
+    <Property Name="Data" Type="datetime" />
+    <Property Name="CPU" Type="int" />
+    <Property Name="RAM" Type="int" />
+  </EntityType>
+  <EntityType Name="Latency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Id_ServersS" Type="int" Nullable="false" />
+    <Property Name="Id_ServersD" Type="int" Nullable="false" />
+    <Property Name="Opis" Type="nvarchar(max)" />
+    <Property Name="Typ" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="LatencyHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Latency" Type="int" Nullable="false" />
+    <Property Name="Data" Type="datetime" />
+    <Property Name="Wartosc" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Logins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Haslo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Imie" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Nazwisko" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" />
+    <Property Name="Utworzony" Type="date" />
+    <Property Name="Zmodyfikowany" Type="date" />
+    <Property Name="Id_Group" Type="int" Nullable="false" />
+    <Property Name="Id_Roles" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoginServers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Login" Type="int" Nullable="false" />
+    <Property Name="Id_Server" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Procedury">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Body" Type="nvarchar(max)" />
+    <Property Name="Utworzona" Type="date" Nullable="false" />
+    <Property Name="Zmodyfikowana" Type="date" />
+    <Property Name="Opis" Type="nvarchar" MaxLength="250" />
+    <Property Name="Id_Servers" Type="int" />
+  </EntityType>
+  <EntityType Name="ProceduryHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Procedury" Type="int" Nullable="false" />
+    <Property Name="Id_Servers" Type="int" Nullable="false" />
+    <Property Name="Data" Type="datetime" />
+    <Property Name="Wynik" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ProcesyHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Servers" Type="int" Nullable="false" />
+    <Property Name="Id_Latency" Type="int" Nullable="false" />
+    <Property Name="Data" Type="datetime" />
+    <Property Name="Wartosc" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rola" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Servers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DNS" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IP" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Klaster" Type="bit" />
+    <Property Name="Opis" Type="nvarchar" MaxLength="250" />
+    <Property Name="Aktywny" Type="bit" />
+    <Property Name="Historia" Type="nvarchar" MaxLength="250" />
+    <Property Name="Dodany" Type="date" />
+    <Property Name="Zmodyfikowany" Type="date" />
+    <Property Name="Id_ServersGroup" Type="int" Nullable="false" />
+    <Property Name="port" Type="int" />
+  </EntityType>
+  <EntityType Name="ServersGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Grupa" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BlokadyHistory_LAtency">
+    <End Role="Latency" Type="Self.Latency" Multiplicity="1" />
+    <End Role="BlokadyHistory" Type="Self.BlokadyHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Latency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlokadyHistory">
+        <PropertyRef Name="Id_Latency" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlokadyHistory_Servers">
+    <End Role="Servers" Type="Self.Servers" Multiplicity="1" />
+    <End Role="BlokadyHistory" Type="Self.BlokadyHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlokadyHistory">
+        <PropertyRef Name="Id_Servers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Databases_DatabseGroup">
+    <End Role="DatabaseGroup" Type="Self.DatabaseGroup" Multiplicity="1" />
+    <End Role="Databases" Type="Self.Databases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DatabaseGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Databases">
+        <PropertyRef Name="Id_DatabaseGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Databases_Servers">
+    <End Role="Servers" Type="Self.Servers" Multiplicity="1" />
+    <End Role="Databases" Type="Self.Databases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Databases">
+        <PropertyRef Name="Id_Servers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Files_Procedury">
+    <End Role="Procedury" Type="Self.Procedury" Multiplicity="1" />
+    <End Role="Files" Type="Self.Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Procedury">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Files">
+        <PropertyRef Name="Id_Procedury" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Files_Servers">
+    <End Role="Servers" Type="Self.Servers" Multiplicity="1" />
+    <End Role="Files" Type="Self.Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Files">
+        <PropertyRef Name="Id_Servers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HostHistory_Latency">
+    <End Role="Latency" Type="Self.Latency" Multiplicity="1" />
+    <End Role="HostHistory" Type="Self.HostHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Latency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HostHistory">
+        <PropertyRef Name="Id_Latency" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HostHistory_Servers">
+    <End Role="Servers" Type="Self.Servers" Multiplicity="1" />
+    <End Role="HostHistory" Type="Self.HostHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HostHistory">
+        <PropertyRef Name="Id_Servers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Latency_ServersD">
+    <End Role="Servers" Type="Self.Servers" Multiplicity="1" />
+    <End Role="Latency" Type="Self.Latency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Latency">
+        <PropertyRef Name="Id_ServersD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Latency_ServersS">
+    <End Role="Servers" Type="Self.Servers" Multiplicity="1" />
+    <End Role="Latency" Type="Self.Latency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Latency">
+        <PropertyRef Name="Id_ServersS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LatencyHistory_Latency">
+    <End Role="Latency" Type="Self.Latency" Multiplicity="1" />
+    <End Role="LatencyHistory" Type="Self.LatencyHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Latency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LatencyHistory">
+        <PropertyRef Name="Id_Latency" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Logins_Group">
+    <End Role="Group" Type="Self.Group" Multiplicity="1" />
+    <End Role="Logins" Type="Self.Logins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Logins">
+        <PropertyRef Name="Id_Group" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Logins_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Logins" Type="Self.Logins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Logins">
+        <PropertyRef Name="Id_Roles" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoginServers_Login">
+    <End Role="Logins" Type="Self.Logins" Multiplicity="1" />
+    <End Role="LoginServers" Type="Self.LoginServers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Logins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LoginServers">
+        <PropertyRef Name="Id_Login" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoginServers_Servers">
+    <End Role="Servers" Type="Self.Servers" Multiplicity="1" />
+    <End Role="LoginServers" Type="Self.LoginServers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LoginServers">
+        <PropertyRef Name="Id_Server" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Procedury_Servers">
+    <End Role="Servers" Type="Self.Servers" Multiplicity="0..1" />
+    <End Role="Procedury" Type="Self.Procedury" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Procedury">
+        <PropertyRef Name="Id_Servers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProceduryHistory_Procedury">
+    <End Role="Procedury" Type="Self.Procedury" Multiplicity="1" />
+    <End Role="ProceduryHistory" Type="Self.ProceduryHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Procedury">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProceduryHistory">
+        <PropertyRef Name="Id_Procedury" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProceduryHistory_Servers">
+    <End Role="Servers" Type="Self.Servers" Multiplicity="1" />
+    <End Role="ProceduryHistory" Type="Self.ProceduryHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProceduryHistory">
+        <PropertyRef Name="Id_Servers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProcesyHistory_Latency">
+    <End Role="Latency" Type="Self.Latency" Multiplicity="1" />
+    <End Role="ProcesyHistory" Type="Self.ProcesyHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Latency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProcesyHistory">
+        <PropertyRef Name="Id_Latency" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProcesyHistory_Servers">
+    <End Role="Servers" Type="Self.Servers" Multiplicity="1" />
+    <End Role="ProcesyHistory" Type="Self.ProcesyHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProcesyHistory">
+        <PropertyRef Name="Id_Servers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Servers_ServersGroup">
+    <End Role="ServersGroup" Type="Self.ServersGroup" Multiplicity="1" />
+    <End Role="Servers" Type="Self.Servers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServersGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Servers">
+        <PropertyRef Name="Id_ServersGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AWPABDModelStoreContainer">
+    <EntitySet Name="BlokadyHistory" EntityType="Self.BlokadyHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DatabaseGroup" EntityType="Self.DatabaseGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Databases" EntityType="Self.Databases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HostHistory" EntityType="Self.HostHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Latency" EntityType="Self.Latency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LatencyHistory" EntityType="Self.LatencyHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginServers" EntityType="Self.LoginServers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Procedury" EntityType="Self.Procedury" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProceduryHistory" EntityType="Self.ProceduryHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProcesyHistory" EntityType="Self.ProcesyHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Servers" EntityType="Self.Servers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServersGroup" EntityType="Self.ServersGroup" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BlokadyHistory_LAtency" Association="Self.FK_BlokadyHistory_LAtency">
+      <End Role="Latency" EntitySet="Latency" />
+      <End Role="BlokadyHistory" EntitySet="BlokadyHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlokadyHistory_Servers" Association="Self.FK_BlokadyHistory_Servers">
+      <End Role="Servers" EntitySet="Servers" />
+      <End Role="BlokadyHistory" EntitySet="BlokadyHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Databases_DatabseGroup" Association="Self.FK_Databases_DatabseGroup">
+      <End Role="DatabaseGroup" EntitySet="DatabaseGroup" />
+      <End Role="Databases" EntitySet="Databases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Databases_Servers" Association="Self.FK_Databases_Servers">
+      <End Role="Servers" EntitySet="Servers" />
+      <End Role="Databases" EntitySet="Databases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Files_Procedury" Association="Self.FK_Files_Procedury">
+      <End Role="Procedury" EntitySet="Procedury" />
+      <End Role="Files" EntitySet="Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Files_Servers" Association="Self.FK_Files_Servers">
+      <End Role="Servers" EntitySet="Servers" />
+      <End Role="Files" EntitySet="Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HostHistory_Latency" Association="Self.FK_HostHistory_Latency">
+      <End Role="Latency" EntitySet="Latency" />
+      <End Role="HostHistory" EntitySet="HostHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HostHistory_Servers" Association="Self.FK_HostHistory_Servers">
+      <End Role="Servers" EntitySet="Servers" />
+      <End Role="HostHistory" EntitySet="HostHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Latency_ServersD" Association="Self.FK_Latency_ServersD">
+      <End Role="Servers" EntitySet="Servers" />
+      <End Role="Latency" EntitySet="Latency" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Latency_ServersS" Association="Self.FK_Latency_ServersS">
+      <End Role="Servers" EntitySet="Servers" />
+      <End Role="Latency" EntitySet="Latency" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LatencyHistory_Latency" Association="Self.FK_LatencyHistory_Latency">
+      <End Role="Latency" EntitySet="Latency" />
+      <End Role="LatencyHistory" EntitySet="LatencyHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Logins_Group" Association="Self.FK_Logins_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="Logins" EntitySet="Logins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Logins_Roles" Association="Self.FK_Logins_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Logins" EntitySet="Logins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoginServers_Login" Association="Self.FK_LoginServers_Login">
+      <End Role="Logins" EntitySet="Logins" />
+      <End Role="LoginServers" EntitySet="LoginServers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoginServers_Servers" Association="Self.FK_LoginServers_Servers">
+      <End Role="Servers" EntitySet="Servers" />
+      <End Role="LoginServers" EntitySet="LoginServers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Procedury_Servers" Association="Self.FK_Procedury_Servers">
+      <End Role="Servers" EntitySet="Servers" />
+      <End Role="Procedury" EntitySet="Procedury" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProceduryHistory_Procedury" Association="Self.FK_ProceduryHistory_Procedury">
+      <End Role="Procedury" EntitySet="Procedury" />
+      <End Role="ProceduryHistory" EntitySet="ProceduryHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProceduryHistory_Servers" Association="Self.FK_ProceduryHistory_Servers">
+      <End Role="Servers" EntitySet="Servers" />
+      <End Role="ProceduryHistory" EntitySet="ProceduryHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProcesyHistory_Latency" Association="Self.FK_ProcesyHistory_Latency">
+      <End Role="Latency" EntitySet="Latency" />
+      <End Role="ProcesyHistory" EntitySet="ProcesyHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProcesyHistory_Servers" Association="Self.FK_ProcesyHistory_Servers">
+      <End Role="Servers" EntitySet="Servers" />
+      <End Role="ProcesyHistory" EntitySet="ProcesyHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Servers_ServersGroup" Association="Self.FK_Servers_ServersGroup">
+      <End Role="ServersGroup" EntitySet="ServersGroup" />
+      <End Role="Servers" EntitySet="Servers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

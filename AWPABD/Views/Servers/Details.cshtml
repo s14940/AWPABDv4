@@ -1,0 +1,107 @@
+﻿@model AWPABD.Models.Servers
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Servers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DNS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DNS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Klaster)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Klaster)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aktywny)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aktywny)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Historia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Historia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dodany)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dodany)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zmodyfikowany)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zmodyfikowany)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.port)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.port)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServersGroup.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServersGroup.Nazwa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

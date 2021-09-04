@@ -1,0 +1,122 @@
+﻿@model AWPABD.Models.ViewModel
+
+
+@{
+    ViewBag.Title = "Home Page";
+
+}
+
+
+<div class="jumbotron">
+    <h1>AWPABD</h1>
+    <script>
+        window.onload = function () {
+            fetch("https://api.chucknorris.io/jokes/random")
+                .then(Response => Response.json())
+                .then(data => dataReady(data));
+        }
+        function dataReady(data) {
+            console.log(data.value)
+            document.getElementById("joke").innerHTML = data.value;
+        }
+    </script>
+    <div id="joke"></div>
+
+
+</div>
+<div>
+    <h2>Serwer</h2>
+
+    </divclass="col-md-4">
+          @using (Html.BeginForm())
+          {
+        <div class="row">
+
+            <div class="col-md-4">
+                @if (Model.data == null)
+                {
+                    @Html.DropDownListFor(m => m.SelectedServer, Model.ServersList as SelectList, "Wybierz serwer")
+
+                }
+                <h2>Procedura</h2>
+                @if (Model.data == null)
+                {
+                    @Html.DropDownListFor(p => p.SelectedProcedura, Model.ProceduryList as SelectList, "Wybierz procedurę")
+                }
+                <h2> </h2>
+                
+            </div>
+
+        </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        var data = {}
+        function selectedtext1(ddlitem) {
+            var selvalueS = ddlitem.value;
+            var seltextS = ddlitem.options[ddlitem.selectedIndex].innerHTML;
+            $('#txt1').val(seltextS);
+            data.selectedtext1 = selvalueS
+        }
+    </script>
+    <script>
+        function selectedtext2(ddlitem) {
+            var selvalueP = ddlitem.value;
+            var seltextP = ddlitem.options[ddlitem.selectedIndex].innerHTML;
+            $('#txt2').val(selvalueP);
+            data.selectedtext2 = selvalueP
+        }
+    </script>
+
+
+    <div class="row">
+
+        <div class="col-md-2">
+
+            <input type="submit" name="Wykonaj" value="WYKONAJ" />
+
+        </div>
+
+        <h2>       </h2>
+        <h2>       </h2>
+        <table class="table">
+
+
+            @if (Model.data != null)
+            {
+                //Model.data.Tables[0].ToString();
+
+
+
+                foreach (System.Data.DataTable table in Model.data.Tables)
+                {
+                    foreach (System.Data.DataColumn column in table.Columns)
+                    {
+                        <th>
+                            @column.ColumnName.ToString()
+                        </th>
+                    }
+
+                    foreach (System.Data.DataRow row in table.Rows)
+                    {
+                        <tr></tr>
+                        foreach (object item in row.ItemArray)
+                        {
+
+                            <td>
+                                @item.ToString()
+                            </td>
+
+                        }
+                        <tr></tr>
+                    }
+                }
+            }
+        </table>
+    </div>
+ }
+
+
+
+
+
+

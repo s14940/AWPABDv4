@@ -1,0 +1,95 @@
+﻿@model IEnumerable<AWPABD.Models.Servers>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    <li>@Html.ActionLink("ServersGroup", "", "ServersGroups")</li>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DNS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Klaster)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aktywny)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Historia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dodany)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zmodyfikowany)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.port)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServersGroup.Nazwa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nazwa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DNS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Klaster)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aktywny)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Historia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dodany)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zmodyfikowany)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.port)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServersGroup.Nazwa)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

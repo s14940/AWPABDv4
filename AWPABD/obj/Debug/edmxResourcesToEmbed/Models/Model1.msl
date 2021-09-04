@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AWPABDModelStoreContainer" CdmEntityContainer="AWPABDEntities">
+    <EntitySetMapping Name="BlokadyHistory">
+      <EntityTypeMapping TypeName="AWPABDModel.BlokadyHistory">
+        <MappingFragment StoreEntitySet="BlokadyHistory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Servers" ColumnName="Id_Servers" />
+          <ScalarProperty Name="Id_Latency" ColumnName="Id_Latency" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Wartosc" ColumnName="Wartosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatabaseGroup">
+      <EntityTypeMapping TypeName="AWPABDModel.DatabaseGroup">
+        <MappingFragment StoreEntitySet="DatabaseGroup">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Grupa" ColumnName="Grupa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Databases">
+      <EntityTypeMapping TypeName="AWPABDModel.Databases">
+        <MappingFragment StoreEntitySet="Databases">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Wlaczona" ColumnName="Wlaczona" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="Collation" ColumnName="Collation" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Id_DatabaseGroup" ColumnName="Id_DatabaseGroup" />
+          <ScalarProperty Name="Id_Servers" ColumnName="Id_Servers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Files">
+      <EntityTypeMapping TypeName="AWPABDModel.Files">
+        <MappingFragment StoreEntitySet="Files">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Procedury" ColumnName="Id_Procedury" />
+          <ScalarProperty Name="Id_Servers" ColumnName="Id_Servers" />
+          <ScalarProperty Name="LokalizacjaPliku" ColumnName="LokalizacjaPliku" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group">
+      <EntityTypeMapping TypeName="AWPABDModel.Group">
+        <MappingFragment StoreEntitySet="Group">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Grupa" ColumnName="Grupa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HostHistory">
+      <EntityTypeMapping TypeName="AWPABDModel.HostHistory">
+        <MappingFragment StoreEntitySet="HostHistory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Servers" ColumnName="Id_Servers" />
+          <ScalarProperty Name="Id_Latency" ColumnName="Id_Latency" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="CPU" ColumnName="CPU" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Latency">
+      <EntityTypeMapping TypeName="AWPABDModel.Latency">
+        <MappingFragment StoreEntitySet="Latency">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Id_ServersS" ColumnName="Id_ServersS" />
+          <ScalarProperty Name="Id_ServersD" ColumnName="Id_ServersD" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LatencyHistory">
+      <EntityTypeMapping TypeName="AWPABDModel.LatencyHistory">
+        <MappingFragment StoreEntitySet="LatencyHistory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Latency" ColumnName="Id_Latency" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Wartosc" ColumnName="Wartosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="AWPABDModel.Logins">
+        <MappingFragment StoreEntitySet="Logins">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Utworzony" ColumnName="Utworzony" />
+          <ScalarProperty Name="Zmodyfikowany" ColumnName="Zmodyfikowany" />
+          <ScalarProperty Name="Id_Group" ColumnName="Id_Group" />
+          <ScalarProperty Name="Id_Roles" ColumnName="Id_Roles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginServers">
+      <EntityTypeMapping TypeName="AWPABDModel.LoginServers">
+        <MappingFragment StoreEntitySet="LoginServers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Login" ColumnName="Id_Login" />
+          <ScalarProperty Name="Id_Server" ColumnName="Id_Server" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Procedury">
+      <EntityTypeMapping TypeName="AWPABDModel.Procedury">
+        <MappingFragment StoreEntitySet="Procedury">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Utworzona" ColumnName="Utworzona" />
+          <ScalarProperty Name="Zmodyfikowana" ColumnName="Zmodyfikowana" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Id_Servers" ColumnName="Id_Servers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProceduryHistory">
+      <EntityTypeMapping TypeName="AWPABDModel.ProceduryHistory">
+        <MappingFragment StoreEntitySet="ProceduryHistory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Procedury" ColumnName="Id_Procedury" />
+          <ScalarProperty Name="Id_Servers" ColumnName="Id_Servers" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Wynik" ColumnName="Wynik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProcesyHistory">
+      <EntityTypeMapping TypeName="AWPABDModel.ProcesyHistory">
+        <MappingFragment StoreEntitySet="ProcesyHistory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Servers" ColumnName="Id_Servers" />
+          <ScalarProperty Name="Id_Latency" ColumnName="Id_Latency" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Wartosc" ColumnName="Wartosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="AWPABDModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Rola" ColumnName="Rola" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servers">
+      <EntityTypeMapping TypeName="AWPABDModel.Servers">
+        <MappingFragment StoreEntitySet="Servers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="DNS" ColumnName="DNS" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Klaster" ColumnName="Klaster" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Aktywny" ColumnName="Aktywny" />
+          <ScalarProperty Name="Historia" ColumnName="Historia" />
+          <ScalarProperty Name="Dodany" ColumnName="Dodany" />
+          <ScalarProperty Name="Zmodyfikowany" ColumnName="Zmodyfikowany" />
+          <ScalarProperty Name="Id_ServersGroup" ColumnName="Id_ServersGroup" />
+          <ScalarProperty Name="port" ColumnName="port" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServersGroup">
+      <EntityTypeMapping TypeName="AWPABDModel.ServersGroup">
+        <MappingFragment StoreEntitySet="ServersGroup">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Grupa" ColumnName="Grupa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
