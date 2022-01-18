@@ -19,6 +19,7 @@ namespace AWPABD.Controllers
         
         public ActionResult Index()
         {
+
             AWPABDEntities db = new AWPABDEntities();
             //ViewBag.ServersList = new SelectList(GetServerList(), "Id", "Nazwa");
             //ViewBag.ProceduryList = new SelectList(GetProceduraList(), "Id", "Nazwa");
@@ -32,6 +33,7 @@ namespace AWPABD.Controllers
             [HttpPost]
         public ActionResult Index(ViewModel model)
         {
+
             var GprocL = GetProceduraList().Find(s => s.Id.ToString() == model.SelectedProcedura);
             var GservL = GetServerList().Find(s => s.Id.ToString() == model.SelectedServer);
             

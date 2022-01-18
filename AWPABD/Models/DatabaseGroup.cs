@@ -11,7 +11,8 @@ namespace AWPABD.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class DatabaseGroup
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,10 @@ namespace AWPABD.Models
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Nazwa Grupy")]
         public string Nazwa { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
         public string Grupa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

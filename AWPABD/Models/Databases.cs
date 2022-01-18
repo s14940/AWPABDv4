@@ -11,18 +11,27 @@ namespace AWPABD.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Databases
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Nazwa")]
         public string Nazwa { get; set; }
         public string Opis { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "W³¹czona")]
         public bool Wlaczona { get; set; }
         public string Owner { get; set; }
         public string Collation { get; set; }
         public string Type { get; set; }
         public Nullable<int> Status { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Nazwa Grupy")]
         public int Id_DatabaseGroup { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Nazwa Serwera")]
         public int Id_Servers { get; set; }
     
         public virtual DatabaseGroup DatabaseGroup { get; set; }

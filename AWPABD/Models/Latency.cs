@@ -11,7 +11,8 @@ namespace AWPABD.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Latency
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,8 +25,14 @@ namespace AWPABD.Models
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Nazwa")]
         public string Nazwa { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Serwer èrÛd≥owy")]
         public int Id_ServersS { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Serwer Docelowy")]
         public int Id_ServersD { get; set; }
         public string Opis { get; set; }
         public string Typ { get; set; }

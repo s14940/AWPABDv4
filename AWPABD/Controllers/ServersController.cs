@@ -55,7 +55,7 @@ namespace AWPABD.Controllers
                 db.Servers.Add(servers);
                 db.SaveChanges();
                 db.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, "AddLS {0},{1}", servers.Nazwa,servers.IP);
-                db.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, "AddListDB {0}", servers.Id);
+                //db.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, "AddListDB {0}", servers.Id);
                 return RedirectToAction("Index");
             }
 

@@ -25,98 +25,103 @@
 
 </div>
 <div>
-    <h2>Serwer</h2>
-
+    @if (Model.data == null)
+    {
+        <h2>Serwer</h2>
+    }
     </divclass="col-md-4">
-          @using (Html.BeginForm())
-          {
+    @using (Html.BeginForm())
+    {
         <div class="row">
 
             <div class="col-md-4">
                 @if (Model.data == null)
                 {
-                    @Html.DropDownListFor(m => m.SelectedServer, Model.ServersList as SelectList, "Wybierz serwer")
-
+                    @Html.DropDownListFor(m => m.SelectedServer, Model.ServersList as SelectList)
+                 
                 }
-                <h2>Procedura</h2>
                 @if (Model.data == null)
                 {
-                    @Html.DropDownListFor(p => p.SelectedProcedura, Model.ProceduryList as SelectList, "Wybierz procedurę")
+                    <h2>Procedura</h2>
+                }
+                @if (Model.data == null)
+                {
+                    @Html.DropDownListFor(p => p.SelectedProcedura, Model.ProceduryList as SelectList)
                 }
                 <h2> </h2>
-                
+
             </div>
 
         </div>
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script>
-        var data = {}
-        function selectedtext1(ddlitem) {
-            var selvalueS = ddlitem.value;
-            var seltextS = ddlitem.options[ddlitem.selectedIndex].innerHTML;
-            $('#txt1').val(seltextS);
-            data.selectedtext1 = selvalueS
-        }
-    </script>
-    <script>
-        function selectedtext2(ddlitem) {
-            var selvalueP = ddlitem.value;
-            var seltextP = ddlitem.options[ddlitem.selectedIndex].innerHTML;
-            $('#txt2').val(selvalueP);
-            data.selectedtext2 = selvalueP
-        }
-    </script>
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <script>
+            var data = {}
+            function selectedtext1(ddlitem) {
+                var selvalueS = ddlitem.value;
+                var seltextS = ddlitem.options[ddlitem.selectedIndex].innerHTML;
+                $('#txt1').val(seltextS);
+                data.selectedtext1 = selvalueS
+            }
+        </script>
+        <script>
+            function selectedtext2(ddlitem) {
+                var selvalueP = ddlitem.value;
+                var seltextP = ddlitem.options[ddlitem.selectedIndex].innerHTML;
+                $('#txt2').val(selvalueP);
+                data.selectedtext2 = selvalueP
+            }
+        </script>
 
 
-    <div class="row">
+        <div class="row">
 
-        <div class="col-md-2">
-
-            <input type="submit" name="Wykonaj" value="WYKONAJ" />
-
-        </div>
-
-        <h2>       </h2>
-        <h2>       </h2>
-        <table class="table">
-
-
-            @if (Model.data != null)
-            {
-                //Model.data.Tables[0].ToString();
-
-
-
-                foreach (System.Data.DataTable table in Model.data.Tables)
+            <div class="col-md-2">
+                @if (Model.data == null)
                 {
-                    foreach (System.Data.DataColumn column in table.Columns)
-                    {
-                        <th>
-                            @column.ColumnName.ToString()
-                        </th>
-                    }
+                    <input type="submit" name="Wykonaj" value="WYKONAJ" />
+                }
+                @if (Model.data != null)
+                {
+                    @Html.ActionLink("Powrót", "Index", "Home")
+                }
+            </div>
 
-                    foreach (System.Data.DataRow row in table.Rows)
+            <h2>       </h2>
+            <h2>       </h2>
+            <table class="table">
+
+
+                @if (Model.data != null)
+                {
+                    //Model.data.Tables[0].ToString();
+
+
+
+                    foreach (System.Data.DataTable table in Model.data.Tables)
                     {
-                        <tr></tr>
-                        foreach (object item in row.ItemArray)
+                        foreach (System.Data.DataColumn column in table.Columns)
                         {
-
-                            <td>
-                                @item.ToString()
-                            </td>
-
+                            <th>
+                                @column.ColumnName.ToString()
+                            </th>
                         }
-                        <tr></tr>
+
+                        foreach (System.Data.DataRow row in table.Rows)
+                        {
+                            <tr></tr>
+                            foreach (object item in row.ItemArray)
+                            {
+
+                                <td>
+                                    @item.ToString()
+                                </td>
+
+                            }
+                            <tr></tr>
+                        }
                     }
                 }
-            }
-        </table>
-    </div>
- }
-
-
-
-
-
-
+            </table>
+        </div>
+    }
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>

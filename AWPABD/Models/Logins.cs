@@ -24,18 +24,35 @@ namespace AWPABD.Models
     
         public int Id { get; set; }
         [Required (ErrorMessage ="To pole jest wymagane")]
+        [Display(Name = "Login")]
         public string Login { get; set; }
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Has³o")]
         public string Haslo { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Telefon")]
+        [Phone]
+        [DataType(DataType.PhoneNumber)]
         public string Telefon { get; set; }
+        [EmailAddress]
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Email")]
         public string Email { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Imie")]
         public string Imie { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Nazwisko")]
         public string Nazwisko { get; set; }
         public string Status { get; set; }
         public Nullable<System.DateTime> Utworzony { get; set; }
         public Nullable<System.DateTime> Zmodyfikowany { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Nazwa Grupy")]
         public int Id_Group { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Nazwa Roli")]
         public int Id_Roles { get; set; }
     
         public virtual Group Group { get; set; }

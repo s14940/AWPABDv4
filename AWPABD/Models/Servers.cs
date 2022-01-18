@@ -11,7 +11,8 @@ namespace AWPABD.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Servers
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -30,8 +31,13 @@ namespace AWPABD.Models
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Nazwa")]
         public string Nazwa { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "DNS")]
         public string DNS { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
         public string IP { get; set; }
         public Nullable<bool> Klaster { get; set; }
         public string Opis { get; set; }
@@ -39,7 +45,10 @@ namespace AWPABD.Models
         public string Historia { get; set; }
         public Nullable<System.DateTime> Dodany { get; set; }
         public Nullable<System.DateTime> Zmodyfikowany { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Grupa Serwerów")]
         public int Id_ServersGroup { get; set; }
+        [Display(Name = "Port")]
         public Nullable<int> port { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

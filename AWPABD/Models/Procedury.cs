@@ -11,7 +11,9 @@ namespace AWPABD.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+
     public partial class Procedury
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,11 +24,19 @@ namespace AWPABD.Models
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Nazwa")]
         public string Nazwa { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Cia³o Procedury")]
         public string Body { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
+        [Display(Name = "Utworzona")]
         public System.DateTime Utworzona { get; set; }
         public Nullable<System.DateTime> Zmodyfikowana { get; set; }
         public string Opis { get; set; }
+        [Display(Name = "Nazwa Serwera")]
         public Nullable<int> Id_Servers { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

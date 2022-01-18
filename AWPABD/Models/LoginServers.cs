@@ -11,11 +11,14 @@ namespace AWPABD.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class LoginServers
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
         public int Id_Login { get; set; }
+        [Required(ErrorMessage = "To pole jest wymagane")]
         public int Id_Server { get; set; }
     
         public virtual Logins Logins { get; set; }
